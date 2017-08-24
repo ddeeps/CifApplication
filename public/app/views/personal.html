@@ -1,0 +1,152 @@
+﻿<a ui-sref="home" class="btn blue right backBtn"> <i class="material-icons">arrow_back</i></a>
+<div class="row">      
+    <h5 class="center">Personal Details</h5>
+    <div class="row red-text center">
+        *Please expand initials in your name -- As the same would be used in our Employment records
+    </div>
+    
+    <div class="col s12">
+        <form class="row" ng-submit="submitForm()">
+            <div class="col s12 row">
+                <div class="col s12 m4 l4">
+                    <div class="input-field col s4">
+                        <select ng-model="candidate.personalDetails.title" id="title" required>
+                            <option value="" disabled selected>Title <label class="redText" style="color:red">*</label></option>
+                            <option value="Mr.">Mr.</option>
+                            <option value="Ms.">Ms.</option>
+                            <option value="Mrs.">Mrs.</option>
+                        </select>
+                    </div>
+                    <div class="input-field col s8">
+                        <input id="firstName" type="text" class="validate" ng-model="candidate.personalDetails.firstName" required>
+                        <label for="firstName" ng-class="{'active':candidate.personalDetails.firstName}">First Name <span class="redText">*</span></label>
+                    </div>
+                </div>
+                <div class="col s12 m4 l4">
+                    <div class="input-field ">
+                        <input id="middleName" type="text" class="validate" ng-model="candidate.personalDetails.middleName">
+                        <label for="middleName" ng-class="{'active':candidate.personalDetails.middleName}">Middle Name </label>
+                    </div>
+                </div>
+                <div class="col s12 m4 l4">
+                    <div class="input-field">
+                        <input id="lastName" type="text" class="validate" ng-model="candidate.personalDetails.lastName" required>
+                        <label for="lastName" ng-class="{'active':candidate.personalDetails.lastName}">Last Name <span class="redText">*</span></label>
+                    </div>
+                </div>
+            </div>
+            <div class=" col s12 row">
+                <div class="input-field col s12 m4">
+                    <select ng-model="candidate.personalDetails.gender" id="gender" required>
+                        <option value="" disabled selected>Gender <span class="redText">*</span></option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="col s12 m4 dobAlign">
+                    <label>Date Of Birth <span class="redText">*</span></label>
+                    <input type="text" id="DOB" class="validate datepicker" ng-model="candidate.personalDetails.dateOfBirth" required>
+                </div>
+                <div class="input-field col s12 m4">
+                    <input id="placeOfBirth" type="text" class="validate" ng-model="candidate.personalDetails.placeOfBirth">
+                    <label for="placeOfBirth" ng-class="{'active':candidate.personalDetails.placeOfBirth}">Place Of Birth</label>
+                </div>
+            </div>
+            <div class="col s12 row">
+                <div class="input-field col s12 m4">
+                    <input type="text" pattern="^\d{10}$" ng-model="candidate.personalDetails.mobileNumber" required>
+                    <label for="mobileNumber" ng-class="{'active':candidate.personalDetails.mobileNumber}">Mobile <span class="redText">*</span></label>
+                </div>
+                <div class="input-field col s12 m4">
+                    <input id="alternateNumber" type="text" pattern="^\d{10}$" class="validate" ng-model="candidate.personalDetails.alternateNumber">
+                    <label for="alternateNumber" ng-class="{'active':candidate.personalDetails.alternateNumber}">Alt. Number</label>
+                </div>
+                <div class="input-field col s12 m4">
+                    <input id="email" type="email" class="validate" ng-model="candidate.personalDetails.personalEmail" required>
+                    <label for="email" ng-class="{'active':candidate.personalDetails.personalEmail}">Email <span class="redText">*</span></label>
+                </div>
+            </div>
+            <div class="col s12 row">
+                <div class="input-field col s12 m3">
+                    <input id="nationality" type="text" class="validate" ng-model="candidate.personalDetails.nationality" required>
+                    <label for="nationality" ng-class="{'active':candidate.personalDetails.nationality}">Nationality <span class="redText">*</span></label>
+                </div>
+                <div class="input-field col s12 m3">
+                    <input id="passportNumber" type="text" class="validate" ng-model="candidate.personalDetails.passportNumber">
+                    <label for="passportNumber" ng-class="{'active':candidate.personalDetails.passportNumber}">Passport Number</label>
+                </div>
+                <div class="input-field col s12 m3">
+                    <input id="pan" type="text" class="validate" ng-model="candidate.personalDetails.pan" required>
+                    <label for="nationality" ng-class="{'active':candidate.personalDetails.pan}">PAN <span class="redText">*</span></label>
+                </div>
+                <div class="input-field col s12 m3">
+                    <input id="nsr" type="text" class="validate" ng-model="candidate.personalDetails.nsr">
+                    <label for="nsr" ng-class="{'active':candidate.personalDetails.nsr}">NSR ITPIN</label>
+                </div>
+            </div>
+            <h5 class="center">Family Details</h5>
+            <br><br>
+            <div class="col s12 row">
+                <div class="input-field col s12 m6">
+                    <input id="fathersName" type="text" class="validate" ng-model="candidate.personalDetails.fathersName" required>
+                    <label for="fathersName" ng-class="{'active':candidate.personalDetails.fathersName}">Fathers Name <span class="redText">*</span></label>
+                </div>
+                <div class="dobAlign col s12 m6">
+                    <label for="fathersDOB">Date Of Birth <span class="redText">*</span></label>
+                    <input id="fathersDOB" type="text" class="validate datepicker" ng-model="candidate.personalDetails.fathersDOB" required>
+                </div>
+            </div>
+            <div class="col s12 row">
+                <div class="input-field col s12 m6">
+                    <input id="mothersName" type="text" class="validate" ng-model="candidate.personalDetails.mothersName" required>
+                    <label for="mothersName" ng-class="{'active':candidate.personalDetails.mothersName}">Mothers Name <span class="redText">*</span></label>
+                </div>
+                <div class="dobAlign col s12 m6">
+                    <label for="mothersDOB">Date Of Birth <span class="redText">*</span></label>
+                    <input id="mothersDOB" type="text" class="validate datepicker" ng-model="candidate.personalDetails.mothersDOB" required>
+                </div>
+            </div>
+            <div class="col s12 row">
+                <div class="input-field col s12 m6">
+                    <input id="spouseName" type="text" class="validate" ng-model="candidate.personalDetails.spouseName">
+                    <label for="spouseName" ng-class="{'active':candidate.personalDetails.spouseName}">Spouse Name</label>
+                </div>
+                <div class="dobAlign col s12 m6">
+                    <label for="spouseDOB">Date Of Birth</label>
+                    <input id="spouseDOB" type="text" class="validate datepicker" ng-model="candidate.personalDetails.spouseDOB">
+                </div>
+            </div>
+            <div class="col s12">
+                <input type="checkbox" class="filled-in" id="children" ng-change="addChildren()" ng-model="hasChildren" />
+                <label for="children">Children</label>
+                <span ng-if="hasChildren"><button type="button" class="btn blue addBtnFloat" ng-click="addChildren()">
+                        <i class="material-icons">add</i>
+                </button></span>
+            </div>
+            <div class="col s12 row" ng-if="hasChildren">
+                <div class="row" ng-repeat="child in candidate.personalDetails.children">
+                    <div class="input-field col s12 m5 18">
+                        <input type="text" class="validate" ng-model="child.name" required>
+                        <label ng-class="{'active':child.name}">Child Name</label>
+                    </div>
+                    <div class="dobAlign col s12 m5 18">
+                        <label>Date Of Birth</label>
+                        <input type="text" class="validate datepicker" ng-model="child.DOB" required>
+                    </div>
+                    <div class="col s12 m2 12">                       
+                        <button type="button" class="btn blue deleteBtn" ng-click="deleteChildren($index)">
+                            <i class="material-icons">delete</i>
+                        </button>                      
+                    </div>
+                </div>
+
+            </div>
+            <div class="col s12 row footerRow">
+                <div class="col s12">                    
+                    <button type="submit" class="btn blue right">Save Details</button>
+                </div>              
+            </div>
+
+        </form>
+    </div>
+</div>

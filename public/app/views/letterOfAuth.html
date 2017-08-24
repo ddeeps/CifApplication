@@ -1,0 +1,46 @@
+<a ui-sref="home" class="btn blue right backBtn"> <i class="material-icons">arrow_back</i></a>
+<div class="row">
+    <h5 class="center">Letter of Authorization</h5>
+    <form class="row" ng-submit="submitForm()">
+        <div class="col s12 row">
+                <p>
+                        <input type="checkbox" class="filled-in" id="agrreAuthorization" ng-model="candidate.letterOfAuth.letterAccepted" required/>
+                        <label for="agrreAuthorization">I agree to provide copies of mark sheets and relevant certificates. I understand that employment
+                                with Prowareness, is governed by Prowareness, Employment Policies as applicable, including
+                                satisfactory information from a background check.</p>
+            
+                                <p>I hereby certify all of the statements made on the Prowareness, Employee Application Form are
+                                true and complete and I understand that omission or misrepresentation of any fact may result in
+                                refusal of employment or immediate dismissal.</p>
+            
+                                <p>As a condition of Company's consideration of my application for employment with the Company,
+                                I hereby give my consent to Prowareness to investigate or cause to be investigated through
+                                any third parties my personal, educational, pre or post-employment history, criminal and all
+                                other checks relevant to the company. I understand that the background investigation will
+                                include, but not be limited to, verification of all information given by me to the Company. I
+                                confirm that the Company is entitled to share such investigation report with its clients to the
+                                extent necessary in connection with the Services, which I may be required to provide to such
+                                clients. I confirm and undertake that the Company shall incur no liability or obligation of any
+                                nature whatsoever resulting from such investigation or sharing of the investigation results as
+                                above.</label>
+                        </p>
+
+                <br>
+
+                <div class="input-field">
+                    <input type="text" class="validate" ng-model="candidate.letterOfAuth.empName" required>
+                    <label>Full Name <span class="redText" ng-class="{'active':candidate.letterOfAuth.empName}">*</span></label>
+                </div>
+
+                <div class="input-field">
+                    <label ng-class="{'active':candidate.letterOfAuth.authDate}">Date <span class="redText">*</span></label>
+                    <input type="text" class="validate datepicker" ng-model="candidate.letterOfAuth.authDate" required>
+                </div>
+        </div>
+        <div class="col s12 row footerRow">
+                <div class="col s12">                    
+                    <button type="submit" class="btn blue right">Save Details</button>
+                </div>              
+        </div>
+    </form>
+</div>

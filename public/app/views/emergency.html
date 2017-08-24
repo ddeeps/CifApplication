@@ -1,0 +1,66 @@
+<a ui-sref="home" class="btn blue right backBtn"> <i class="material-icons">arrow_back</i></a>
+<div class="row">
+        <h5 class="center">Emergency Details</h5>
+        <div class="col s12">
+            <form class="row" ng-submit="submitForm()">
+                <div class="col s12 row">
+                    <div class="col s12 m4 l4">
+                        <div class="input-field ">
+                            <input  type="text" class="validate" ng-model="candidate.emergencyDetails.bloodGroup" required>
+                            <label  ng-class="{'active':candidate.emergencyDetails.bloodGroup}">Blood Group <span class="redText">*</span></label>
+                        </div>
+                    </div>
+                    <div class="col s12 m4 l4">
+                        <div class="input-field ">
+                            <input  type="text" class="validate" ng-model="candidate.emergencyDetails.allergicTo">
+                            <label  ng-class="{'active':candidate.emergencyDetails.allergicTo}">Allergic To</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m4 l4">
+                        <div class="input-field">
+                            <input  type="text" class="validate" ng-model="candidate.emergencyDetails.bloodPressure">
+                            <label  ng-class="{'active':candidate.emergencyDetails.bloodPressure}">Blood Pressure</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m4 l4">
+                        <div class="input-field">
+                            <input  type="text" class="validate" ng-model="candidate.emergencyDetails.sugar">
+                            <label  ng-class="{'active':candidate.emergencyDetails.sugar}">Sugar</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m4 l4">
+                        <div class="input-field">
+                            <input  type="text" class="validate" ng-model="candidate.emergencyDetails.eyeSight">
+                            <label  ng-class="{'active':candidate.emergencyDetails.eyeSight}">Eye sight</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m4 l4">
+                        <div class="input-field">
+                            <input  type="text" class="validate" ng-model="candidate.emergencyDetails.anyMajorIllness">
+                            <label  ng-class="{'active':candidate.emergencyDetails.anyMajorIllness}">Any major illness</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m6">
+                            <div class="input-field">
+                                <input  type="text" class="validate" ng-model="candidate.emergencyDetails.emergencyContactPerson" required>
+                                <label  ng-class="{'active':candidate.emergencyDetails.emergencyContactPerson}">Contact person in emergency <span class="redText">*</span></label>
+                            </div>
+                    </div>
+                    <div class="col s12 m6">
+                        <div class="input-field">
+                            <input  type="text" class="validate" ng-model="candidate.emergencyDetails.emergencyContactAddress" required>
+                            <label  ng-class="{'active':candidate.emergencyDetails.emergencyContactAddress}">Address & phone number <span class="redText">*</span></label>
+                        </div>
+                    </div>
+                </div>
+      
+      
+                <div class="col s12 row">
+                    <div class="col s12">
+                        <button type="submit" class="btn blue right">Save Details</button>
+                    </div>
+                </div>
+      
+            </form>
+        </div>
+</div>

@@ -1,0 +1,159 @@
+﻿<a ui-sref="home" class="btn blue right backBtn"> <i class="material-icons">arrow_back</i></a>
+<div class="row">
+    <h5 class="center">Employment Details</h5>
+    <div class="row red-text center">
+        <p>
+            *Ensure that you are descriptive wherever necessary – e.g. If your previous company is closed
+down, please do mention it. Location & Employee Code/ ID/ Number is mandatory. If your
+previous employer did not provide the Employee ID, please mention and state reasons for the
+same
+        </p>
+        <p>
+            *Employment details should be of the company you are on payrolls of, not of a company
+you are deputed to on an assignment with. In case you are showing employments
+experience in a skill enabling or professional Training institute, the same should only be
+shown if you were on the payrolls of such an institute. 
+        </p>
+    </div>
+
+    <div class="col s12">
+        <form class="row" ng-submit="submitForm()">
+            <div class="col s12 row" ng-repeat="employer in candidate.employmentDetails.employers">
+                <button ng-if='$index !== 0' type="button" class="btn blue deleteBtn" style="float:right" ng-click="deleteEmployer($index)">
+                    <i class="material-icons">delete</i>
+                </button> 
+                <h5 class="center">Employer {{$index +1}}</h5> 
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="employer.name" required>
+                        <label ng-class="{'active':employer.name}">Organization Name <span class="redText">*</span></label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="employer.empID" required>
+                        <label ng-class="{'active':employer.empID}">Employee ID <span class="redText">*</span></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="employer.address" required>
+                        <label ng-class="{'active':employer.address}">Address (Branch name) <span class="redText">*</span></label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <select ng-model="employer.employmentType" required>
+                            <option value="" disabled selected>Employment Type <span class="redText">*</span></option>
+                            <option value="Permanent">Permanent</option>
+                            <option value="Contract">Contract</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m4">
+                        <input type="number" class="validate" ng-model="employer.periodOfEmployment" required>
+                        <label ng-class="{'active':employer.periodOfEmployment}">Period Of Employment(yrs) <span class="redText">*</span></label>
+                    </div>
+                    <div class="col s12 m4">
+                        <label ng-class="{'active':employer.fromDate}">From Date <span class="redText">*</span></label>
+                        <input type="text" class="validate datepicker" ng-model="employer.fromDate" required>
+                    </div>
+                    <div class="col s12 m4">
+                        <label ng-class="{'active':employer.toDate}">To Date <span class="redText">*</span></label>
+                        <input type="text" class="validate datepicker" ng-model="employer.toDate" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="employer.designation" required>
+                        <label ng-class="{'active':employer.designation}">Last Designation held <span class="redText">*</span></label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="number" class="validate" ng-model="employer.lastSalary">
+                        <label ng-class="{'active':employer.lastSalary}">Last Drawn Salary </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m4">
+                        <input type="text" class="validate" ng-model="employer.reportingManagersName" required>
+                        <label ng-class="{'active':employer.reportingManagersName}">Reporting Manager's Name <span class="redText">*</span></label>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <input type="text" class="validate" ng-model="employer.reportingManagersDesignation">
+                        <label ng-class="{'active':employer.reportingManagersDesignation}">Reporting Manager's Designation</label>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <input type="text" class="validate" pattern="^\d{10}$" ng-model="employer.reportingManagersContact" required>
+                        <label ng-class="{'active':employer.reportingManagersContact}">Reporting Manager's Contact <span class="redText">*</span></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="employer.reasonForLeaving">
+                        <label ng-class="{'active':employer.reasonForLeaving}">Reason for Leaving</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <select ng-model="employer.modeOfSeperation">
+                            <option value="" disabled selected>Mode of Separation</option>
+                            <option value="Resignation">Resignation</option>
+                            <option value="Termination">Termination</option>
+                            <option value="Absconded">Absconded</option>
+                            <option value="Closed Operations">Closed Operations</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-field col s12" ng-if="employer.modeOfSeperation=='Others'">
+                    <input type="text" class="validate" ng-model="employer.seperationModeOthers">
+                    <label ng-class="{'active':employer.seperationModeOthers}">Mode of Separation If Others</label>
+                </div>
+
+            </div>
+            <div class="col s12 row">
+                <div class="col s12 center">
+                    <button type="button" ng-click="addEmployer()" class="btn blue">Add Employer</button>
+                </div>
+            </div>
+            <div class="col s12 row">
+                 <h6 class="center">Break In Employment (if any):</h6>
+                <div class="col s12">
+                    <div class="col s12 m6">
+                        <label>Duration From</label>
+                        <input type="text" class="validate datepicker" ng-model="candidate.employmentDetails.employmentBreakFrom" >
+                    </div>
+                    <div class="col s12 m6">
+                        <label>Duration To</label>
+                        <input type="text" class="validate datepicker" ng-model="candidate.employmentDetails.employmentBreakTo" >
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="candidate.employmentDetails.reasonForEmploymentBreak" >
+                        <label ng-class="{'active':candidate.employmentDetails.reasonForEmploymentBreak}">Reason For break</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col s12 row">
+                 <h6 class="center">Break between Studies and Employment (if any):</h6>
+                <div class="col s12">
+                    <div class="col s12 m6">
+                        <label>Duration From</label>
+                        <input type="text" class="validate datepicker" ng-model="candidate.employmentDetails.employmentStudiesBreakFrom" >
+                    </div>
+                    <div class="col s12 m6">
+                        <label>Duration To</label>
+                        <input type="text" class="validate datepicker" ng-model="candidate.employmentDetails.employmentStudiesBreakTo" >
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="candidate.employmentDetails.reasonForEmploymentStudiesBreak" >
+                        <label ng-class="{'active':candidate.employmentDetails.reasonForEmploymentStudiesBreak}">Reason For break</label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col s12 row">
+                <div class="col s12">
+                    <button type="submit" class="btn blue right">Save Details</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

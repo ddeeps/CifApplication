@@ -1,0 +1,169 @@
+<a ui-sref="home" class="btn blue right backBtn"> <i class="material-icons">arrow_back</i></a>
+<div class="row">
+    <h5 class="center">Additional Details</h5>
+    <div class="col s12">
+        <form class="row" ng-submit="submitForm()">
+            <div class="col s12 row">
+                <div class="col s12">
+                    <div class="input-field ">
+                        <input  type="text" class="validate" ng-model="candidate.additionalDetails.disablilities">
+                        <label  ng-class="{'active':candidate.additionalDetails.disablilities}">Physical Disablities, If Any</label>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="input-field ">
+                        <input  type="text" class="validate" ng-model="candidate.additionalDetails.courtProceedings">
+                        <label  class="hide-on-small-only" ng-class="{'active':candidate.additionalDetails.courtProceedings}">Have you been involved in Court Proceeding (If yes, please provide details on a seperate sheet of paper)</label>
+                        <label  class="show-on-small hide-on-med-and-up" ng-class="{'active':candidate.additionalDetails.courtProceedings}">Ever involved in Court Proceeding</label>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="">
+                        <label class="labelStyle">Previously have you ever been interviewed in Prowareness? If yes, please provide details</label>
+                    </div>
+                    <div class="input-field">
+                        <input  type="text" class="validate" ng-model="candidate.additionalDetails.interviedOn">
+                        <label  ng-class="{'active':candidate.additionalDetails.interviedOn}">When</label>
+                    </div>
+                    <div class="input-field">
+                        <input  type="text" class="validate" ng-model="candidate.additionalDetails.interviedOutcome">
+                        <label  ng-class="{'active':candidate.additionalDetails.interviedOutcome}">Position and Outcome</label>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="input-field">
+                        <input  type="text" class="validate" ng-model="candidate.additionalDetails.hobbies" required>
+                        <label  ng-class="{'active':candidate.additionalDetails.hobbies}">Your Hobbies <span class="redText">*</span></label>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="input-field">
+                        <input  type="text" class="validate" ng-model="candidate.additionalDetails.interests" required>
+                        <label  ng-class="{'active':candidate.additionalDetails.interests}">Your Interests <span class="redText">*</span></label>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="input-field">
+                        <input  type="text" class="validate" ng-model="candidate.additionalDetails.goalsInLife" required>
+                        <label  ng-class="{'active':candidate.additionalDetails.goalsInLife}">Your Goal / Aim in life <span class="redText">*</span></label>
+                    </div>
+                </div>
+                <div class="col s12">
+                        <div class="input-field">
+                            <input  type="text" class="validate" ng-model="candidate.additionalDetails.lifePrincipals" required>
+                            <label  class="hide-on-small-only" ng-class="{'active':candidate.additionalDetails.lifePrincipals}">Prinicipals / ideals which have guided you in life <span class="redText">*</span></label>
+                            <label  class="show-on-small hide-on-med-and-up" ng-class="{'active':candidate.additionalDetails.lifePrincipals}">Prinicipals / ideals <span class="redText">*</span></label>
+                        </div>
+                </div>
+                
+                <div class="col s12">
+                    <div class="">
+                        <label class="labelStyle">List down three of your <span class="redText">*</span></label>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="input-field">
+                            <input  type="text" class="validate" ng-model="candidate.additionalDetails.strengths[0]" required>
+                            <label  ng-class="{'active':candidate.additionalDetails.strengths[0]}">Strength 1</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="input-field">
+                            <input  type="text" class="validate" ng-model="candidate.additionalDetails.strengths[1]" required>
+                            <label  ng-class="{'active':candidate.additionalDetails.strengths[1]}">Strength 2</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="input-field">
+                            <input  type="text" class="validate" ng-model="candidate.additionalDetails.strengths[2]" required>
+                            <label  ng-class="{'active':candidate.additionalDetails.strengths[2]}">Strength 3</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="input-field">
+                            <input  type="text" class="validate" ng-model="candidate.additionalDetails.weekness[0]" required>
+                            <label  ng-class="{'active':candidate.additionalDetails.weekness[0]}">Weekness 1</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="input-field">
+                            <input  type="text" class="validate" ng-model="candidate.additionalDetails.weekness[1]" required>
+                            <label  ng-class="{'active':candidate.additionalDetails.weekness[1]}">Weekness 2</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="input-field">
+                            <input  type="text" class="validate" ng-model="candidate.additionalDetails.weekness[2]" required>
+                            <label  ng-class="{'active':candidate.additionalDetails.weekness[2]}">Weekness 3</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="">
+                        <label class="labelStyle">Are you willing to Travel</label>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="input-field">
+                            <input  type="text" class="validate" ng-model="candidate.additionalDetails.willTravelInIndia">
+                            <label  ng-class="{'active':candidate.additionalDetails.willTravelInIndia}">In India :</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="input-field">
+                            <input  type="text" class="validate" ng-model="candidate.additionalDetails.willTravelAbroad">
+                            <label  ng-class="{'active':candidate.additionalDetails.willTravelAbroad}">To Abroad :</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="input-field">
+                            <input  type="text" class="validate" ng-model="candidate.additionalDetails.travelStateRestrictions">
+                            <label  ng-class="{'active':candidate.additionalDetails.travelStateRestrictions}">State restrications/problems if any</label>
+                            <label  class="show-on-small hide-on-med-and-up" ng-class="{'active':candidate.additionalDetails.travelStateRestrictions}">problems if any</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="input-field">
+                        <input  type="text" class="validate" ng-model="candidate.additionalDetails.knownEmployees">
+                        <label  class="hide-on-small-only" ng-class="{'active':candidate.additionalDetails.knownEmployees}">Are you related to any of the employees? If yes please refer the name</label>
+                        <label  class="show-on-small hide-on-med-and-up" ng-class="{'active':candidate.additionalDetails.knownEmployees}">Know anyone in Prowareness</label>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="input-field">
+                        <input  type="text" class="validate" ng-model="candidate.additionalDetails.publications">
+                        <label  class="hide-on-small-only" ng-class="{'active':candidate.additionalDetails.publications}">Publication if any (list with specimen copy)</label>
+                        <label  class="show-on-small hide-on-med-and-up" ng-class="{'active':candidate.additionalDetails.publications}">Publication if any</label>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="input-field">
+                        <input  type="text" class="validate" ng-model="candidate.additionalDetails.trainingAttended">
+                        <label  class="hide-on-small-only" ng-class="{'active':candidate.additionalDetails.trainingAttended}">Any specialized Training Program attended</label>
+                        <label  class="show-on-small hide-on-med-and-up" ng-class="{'active':candidate.additionalDetails.trainingAttended}">Training Program attended</label>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="input-field">
+                        <input  type="text" class="validate" ng-model="candidate.additionalDetails.interestedInTrainings">
+                        <label  class="hide-on-small-only" ng-class="{'active':candidate.additionalDetails.interestedInTrainings}">Would you like to attend any specific training</label>
+                        <label  class="show-on-small hide-on-med-and-up" ng-class="{'active':candidate.additionalDetails.interestedInTrainings}">Intested in getting trained in</label>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="input-field">
+                        <input  type="text" class="validate" ng-model="candidate.additionalDetails.suggestions">
+                        <label  ng-class="{'active':candidate.additionalDetails.suggestions}">Any other information/Suggestion</label>
+                    </div>
+                </div>
+            </div>
+  
+  
+            <div class="col s12 row">
+                <div class="col s12">
+                    <button type="submit" class="btn blue right">Save Details</button>
+                </div>
+            </div>
+  
+        </form>
+    </div>
+</div>

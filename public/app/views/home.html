@@ -1,0 +1,54 @@
+﻿<div class="row">
+        <h5 class=" center">Prowareness Software Services Pvt. Ltd. </h5>
+        <h4 class=" center">CANDIDATE INFORMATION FORM (CIF) </h4>
+    
+        <div class="col s12">
+            <div class="row">
+                <img src="assets/images/profile.png" class="profileImage centerContent" />
+            </div>
+            <form ng-submit="submitForm()">
+                    <!--section 1 -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="name" type="text" class="validate" ng-model="candidate.employeeName" required>
+                            <label for="name" ng-class="{'active':candidate.employeeName}">Employee Name <span class="redText">*</span></label>
+                        </div>
+                        <div class="input-field col s12">
+                            <input id="empId" type="text" class="validate" ng-model="candidate.employeeID">
+                            <label for="empId" ng-class="{'active':candidate.employeeID}">Employee ID </label> 
+                        </div>
+                    </div>
+    
+                    <!--section 2 -->
+                    <div class='row'>
+                        <div class="col s12 m4 l3 navTab" ng-repeat="anchor in navigations" ui-sref="{{anchor}}">
+                                <div class="card orange" ng-class="{ 'lighten-3':!candidate[anchor+'Details']}">
+                                <div class="card-content white-text">
+                                    <span class="card-title"><span ng-if="anchor == 'authorization'">LETTER OF </span>{{anchor | uppercase}} 
+                                        <span ng-if="anchor !== 'authorization'">DETAILS</span>
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="col s12 m4 l3 navTab"  ui-sref="authorization">
+                                <div class="card orange" ng-class="{ 'lighten-3':!candidate.letterOfAuth}">
+                                <div class="card-content white-text">
+                                    <span class="card-title">LETTER OF AUTHORIZATION </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col s6 ">
+                            <button class="btn navButton centerContent blue right" ng-click="saveUserDetails()" ng-disabled="enableSubmit">Submit</button>
+                        </div>
+                        <div class="col s6 ">
+                            <button class="btn navButton centerContent blue left" ng-click="DownloadPDF()" ng-disabled="enableSubmit" ui-sref="summary">Print</button>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
+    

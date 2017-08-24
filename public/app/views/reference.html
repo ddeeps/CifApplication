@@ -1,0 +1,53 @@
+﻿<a ui-sref="home" class="btn blue right backBtn"> <i class="material-icons">arrow_back</i></a>
+<div class="row">
+    <h5 class="center">Reference Details</h5>
+    <div class="row red-text center">
+            *Please provide details pertaining to only career experience. Personal details will be considered invalid.
+    </div>
+    <div class="col s12">
+        <form class="row" ng-submit="submitForm()">
+            <div class="col s12 row" ng-repeat="reference in candidate.referenceDetails">
+                <h6 class="center">Reference {{$index+1}} (Supervisor) </h6>
+                <div class="col s12">
+                <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="reference.name" required>
+                        <label ng-class="{'active':reference.name}">Name <span class="redText">*</span></label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        
+                        <input type="text" class="validate" ng-model="reference.designation" required>
+                        <label ng-class="{'active':reference.designation}">Designation <span class="redText">*</span></label>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="input-field col s12 m6">                        
+                        <input type="text" class="validate" ng-model="reference.organization" required>
+                        <label ng-class="{'active':reference.organization}">Organization Name <span class="redText">*</span></label>
+                    </div>
+                    <div class="input-field col s12 m6">                       
+                        <input type="text" pattern="^\d{10}$" class="validate" ng-model="reference.contact" required>
+                        <label ng-class="{'active':reference.contact}">Contact No. <span class="redText">*</span></label>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="input-field col s12 m6">
+                        
+                        <input type="email" class="validate" ng-model="reference.email" required>
+                        <label ng-class="{'active':reference.email}">Email ID(Official) <span class="redText">*</span></label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        
+                        <input type="text" class="validate" ng-model="reference.periodOfAcquaintance">
+                        <label ng-class="{'active':reference.periodOfAcquaintance}">Period Of Acquaintance(eg. Sept 07 to July 10)</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 row">
+                <div class="col s12">
+                    <button type="submit" class="btn blue right">Save Details</button>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>

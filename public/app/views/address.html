@@ -1,0 +1,110 @@
+﻿<a ui-sref="home" class="btn blue right backBtn"> <i class="material-icons">arrow_back</i></a>
+<div class="row">
+    <h5 class="center">Address Details</h5>
+    <div class="col s12">
+        <form ng-submit="submitForm()">
+            <div class="row col s12">
+                <h5 class="center">Current Residing Address (In Detail)</h5>    
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="candidate.addressDetails.current.addressLine1" required>
+                        <label ng-class="{'active':candidate.addressDetails.current.addressLine1}">Address Line 1 <span class="redText">*</span></label>
+                    </div> 
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="candidate.addressDetails.current.addressLine2">
+                        <label ng-class="{'active':candidate.addressDetails.current.addressLine2}">Address Line 2</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="candidate.addressDetails.current.addressLine3">
+                        <label ng-class="{'active':candidate.addressDetails.current.addressLine3}">Address Line 3</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="candidate.addressDetails.current.addressLine4" >
+                        <label ng-class="{'active':candidate.addressDetails.current.addressLine4}">Address Line 4</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="candidate.addressDetails.current.cityName" required>
+                        <label ng-class="{'active':candidate.addressDetails.current.cityName}">City <span class="redText">*</span></label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="candidate.addressDetails.current.stateName" required>
+                        <label ng-class="{'active':candidate.addressDetails.current.stateName}">State <span class="redText">*</span></label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" pattern="^\d{6}$" class="validate" ng-model="candidate.addressDetails.current.pinCode" required>
+                        <label ng-class="{'active':candidate.addressDetails.current.pinCode}">Pin Code <span class="redText">*</span></label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="candidate.addressDetails.current.landmark" required>
+                        <label ng-class="{'active':candidate.addressDetails.current.landmark}">Landmark <span class="redText">*</span></label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="candidate.addressDetails.current.durationOfStay">
+                        <label ng-class="{'active':candidate.addressDetails.current.durationOfStay}">Duration of Stay</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="candidate.addressDetails.current.telephone">
+                        <label ng-class="{'active':candidate.addressDetails.current.telephone}">Telephone</label>
+                    </div>
+                </div>
+            <div class="row">
+                    <p>
+                        <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" ng-model="sameAddress"/>
+                        <label for="filled-in-box">Permanent address is same as current</label>
+                    </p>
+            </div>
+                <h5 class="center">Permanent/Native Address (In Detail)</h5>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="candidate.addressDetails.permanent.addressLine1" required>
+                        <label ng-class="{'active':candidate.addressDetails.permanent.addressLine1}">Address Line 1 <span class="redText">*</span></label>
+                    </div> 
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="candidate.addressDetails.permanent.addressLine2">
+                        <label ng-class="{'active':candidate.addressDetails.permanent.addressLine2}">Address Line 2</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="candidate.addressDetails.permanent.addressLine3" >
+                        <label ng-class="{'active':candidate.addressDetails.permanent.addressLine3}">Address Line 3</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="candidate.addressDetails.permanent.addressLine4" >
+                        <label ng-class="{'active':candidate.addressDetails.permanent.addressLine4}">Address Line 4</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="candidate.addressDetails.permanent.cityName" required>
+                        <label ng-class="{'active':candidate.addressDetails.permanent.cityName}">City <span class="redText">*</span></label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="candidate.addressDetails.permanent.stateName" required>
+                        <label ng-class="{'active':candidate.addressDetails.permanent.stateName}">State <span class="redText">*</span></label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="text" pattern="^\d{6}$" class="validate" ng-model="candidate.addressDetails.permanent.pinCode" required>
+                        <label ng-class="{'active':candidate.addressDetails.permanent.pinCode}">Pin Code <span class="redText">*</span></label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input type="text" class="validate" ng-model="candidate.addressDetails.permanent.landmark">
+                        <label ng-class="{'active':candidate.addressDetails.permanent.landmark}">Landmark</label>
+                    </div>
+                    <div>
+
+                    <div class="input-field col s12 m6">
+                        <input type="text" class="validate" ng-model="candidate.addressDetails.permanent.durationOfStay">
+                        <label ng-class="{'active':candidate.addressDetails.permanent.durationOfStay}">Duration of Stay</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input type="number" class="validate" ng-model="candidate.addressDetails.permanent.telephone">
+                        <label ng-class="{'active':candidate.addressDetails.permanent.telephone}">Telephone</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 row">
+                <div class="col s12">
+                    <button type="submit"  class="btn blue right">Save Details</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
